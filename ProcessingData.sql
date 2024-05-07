@@ -26,8 +26,8 @@ FROM twc-vrproject.VRDataset.VRData1
 WHERE new_closure_type = 0;
 
 -- Percentage successful
-SELECT (COUNT(CASE WHEN new_closure_type = 0 THEN 0 END) / COUNT(ID)) * 100 AS percentage_succ
+SELECT (COUNT(CASE WHEN new_closure_type = 1 THEN 1 END) / COUNT(ID)) * 100 AS percentage_succ
 FROM twc-vrproject.VRDataset.VRData1;
 -- Percentage unsuccessful
-SELECT (COUNT(CASE WHEN new_closure_type = 1 THEN 1 END) / COUNT(ID)) * 100 AS percentage_succ
+SELECT (COUNT(CASE WHEN new_closure_type = 0 THEN 0 END) / COUNT(ID)) * 100 AS percentage_succ
 FROM twc-vrproject.VRDataset.VRData1;
