@@ -31,3 +31,12 @@ FROM twc-vrproject.VRDataset.VRData1;
 -- Percentage unsuccessful
 SELECT (COUNT(CASE WHEN new_closure_type = 0 THEN 0 END) / COUNT(ID)) * 100 AS percentage_succ
 FROM twc-vrproject.VRDataset.VRData1;
+
+-- Calculate the correlation between case length and total payment for successful cases
+SELECT CORR(case_length_months, total_case_payment) AS correlation
+FROM twc-vrproject.VRDataset.VRData1
+WHERE new_closure_type = 1;
+-- Calculate the correlation between case length and total payment for unsuccessful cases
+SELECT CORR(case_length_months, total_case_payment) AS correlation
+FROM twc-vrproject.VRDataset.VRData1
+WHERE new_closure_type = 0;
