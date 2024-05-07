@@ -40,3 +40,18 @@ WHERE new_closure_type = 1;
 SELECT CORR(case_length_months, total_case_payment) AS correlation
 FROM twc-vrproject.VRDataset.VRData1
 WHERE new_closure_type = 0;
+
+--Calculate the correlation between case length and total payment for successful cases based on ethnicity
+SELECT CORR(case_length_months, total_case_payment) AS correlation
+FROM twc-vrproject.VRDataset.VRData1
+WHERE ethnicity = 'Asiatic or Pacific' AND new_closure_type = 1;
+
+--Calculate the correlation between case length and total payment for successful cases based on disability
+SELECT CORR(case_length_months, total_case_payment) AS correlation
+FROM twc-vrproject.VRDataset.VRData1
+WHERE primary_disability = 'Auditory/Communicative Disability' AND new_closure_type = 1;
+
+--Calculate the correlation between case length and total payment for successful cases based on region
+SELECT CORR(case_length_months, total_case_payment) AS correlation
+FROM twc-vrproject.VRDataset.VRData1
+WHERE region_id = 500 AND new_closure_type = 1;
